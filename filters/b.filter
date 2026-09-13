@@ -1,0 +1,36 @@
+# A baked filter, written by combo from sweeps\sweep_cfad47ae1a5f54fb/combos_bake1 (main2.csv).
+# holdout recall 99.79%, eliminates 73.077% of random seeds, 6345.30 ns per seed on one core
+# Measured on the seeds these baked filters pass, so bake it after them:
+#   1. cheap and[or;or] level 0.4 (d79333ce96d42cc5)
+hbd-filter 1
+filter main2 and[or;or] level 0.995
+note M2+{M1+or+{C4+and+L0.2+{C2+or+L0.6+{phase.humidity.A0.b}+{phase.weirdness.A0.a}}+{C2+or+L0.8+{phase.continentalness.B1.a}+{sum.humidity.B0.b~erosion.A0.b}}}+{temperature/mirror4/max}}+{M1+or+{C4+and+L0.6+{C2+or+L0.4+{phase.humidity.A0.b}+{phase.weirdness.A0.a}}+{C2+or+L0.6+{phase.continentalness.B1.a}+{sum.humidity.B0.b~erosion.A0.b}}}+{temperature/mirror4/min}}
+after d79333ce96d42cc5
+hash 9947a3ea0e54b40e
+phase phase.humidity.A0.b -1
+sum sum.humidity.B0.b~erosion.A0.b
+  part humidity.B0.b -1 -0.11988423079014278 0.095626793404299359
+  part erosion.A0.b -1 -0.21620724397691943 0.14174999096422827
+phase phase.continentalness.B1.a -1
+rule temperature/mirror4/min 1
+  param temperature
+  sym mirror4
+  agg min
+  term temperature_oct0 block 1169 1233 -1 -0.348455134 0.27291823999999998
+  term temperature_oct0_1 block 1169 1105 -1 -0.34517655000000003 0.28069280200000002
+  term phase humidity.A0.b -1 0.25636194400000001 0.14469976300000001
+  term temperature_oct0 block 1169 1361 -1 -0.35491220400000001 0.26859961900000001
+  term temperature_oct0 block 977 721 -1 -0.28396512299999999 0.304715819
+  term phase humidity.B0.b -1 0.24821470800000001 0.141516592
+rule temperature/mirror4/max 1
+  param temperature
+  sym mirror4
+  agg max
+  term temperature_oct0 block 1169 1201 1 0.32910507100000003 0.27980289800000002
+  term temperature_oct0_1 block 1169 1201 1 0.335283306 0.28248579600000001
+  term temperature_oct0 block 1169 1073 1 0.31973338400000001 0.285604513
+  term phase humidity.A0.b -1 0.25636194400000001 0.14469976300000001
+  term temperature_oct0_1 block 1425 1201 1 0.34863126999999999 0.27136617800000001
+  term temperature_oct0_1 block 913 1233 1 0.316846291 0.29349176700000001
+expr (((phase.humidity.A0.b>=-0.029016650901502315 & (sum.humidity.B0.b~erosion.A0.b>=1.0684336791709825 | phase.continentalness.B1.a>=-0.023010044276839111)) | temperature/mirror4/min>=0.58578520623856234) & ((phase.humidity.A0.b>=-0.023128792976535164 & (sum.humidity.B0.b~erosion.A0.b>=1.1299800127755757 | phase.continentalness.B1.a>=-0.021713060332486673)) | temperature/mirror4/max>=0.071862757380362588))
+end

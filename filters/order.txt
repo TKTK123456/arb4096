@@ -1,0 +1,3 @@
+# The .filter files to apply, in order, one per line.
+a.filter
+b.filter

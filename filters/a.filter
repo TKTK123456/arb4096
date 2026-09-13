@@ -1,0 +1,20 @@
+# A baked filter, written by combo from sweeps\sweep_cfad47ae1a5f54fb/combos (cheap.csv).
+# holdout recall 80.34%, eliminates 79.269% of random seeds, 114.51 ns per seed on one core
+hbd-filter 1
+filter cheap and[or;or] level 0.4
+note C4+and+L0.4+{C2+or+L0.4+{phase.continentalness.A1.b}+{sum.humidity.A0.b~humidity.B0.b}}+{C2+or+L0.8+{sum.humidity.A0.b~humidity.B0.b~erosion.A0.b~humidity.B1.b}+{sum.humidity.B0.b~erosion.B0.b}}
+hash d79333ce96d42cc5
+phase phase.continentalness.A1.b -1
+sum sum.humidity.A0.b~humidity.B0.b
+  part humidity.A0.b -1 -0.24940393582882495 0.1447782287917444
+  part humidity.B0.b -1 -0.25031682253801046 0.14379298400373333
+sum sum.humidity.B0.b~erosion.B0.b
+  part humidity.B0.b -1 -0.25031682253801046 0.14379298400373333
+  part erosion.B0.b -1 -0.25038883382100297 0.14417500449336876
+sum sum.humidity.A0.b~humidity.B0.b~erosion.A0.b~humidity.B1.b
+  part humidity.A0.b -1 -0.24940393582882495 0.1447782287917444
+  part humidity.B0.b -1 -0.25031682253801046 0.14379298400373333
+  part erosion.A0.b -1 -0.25094678589736918 0.14404782688263135
+  part humidity.B1.b -1 -0.25154448987142686 0.14360284513715324
+expr ((phase.continentalness.A1.b>=-0.12663483970180789 | sum.humidity.A0.b~humidity.B0.b>=1.392640618932101) & (sum.humidity.B0.b~erosion.B0.b>=1.2411402796355437 | sum.humidity.A0.b~humidity.B0.b~erosion.A0.b~humidity.B1.b>=1.288636822500266))
+end

@@ -1,0 +1,7 @@
+# built by build_gpu.bat (make gpu)
+/gpu_finder.dll
+/gpu_finder.lib
+/gpu_finder.exp
+*.exe
+arb4096*.txt
+.vs
