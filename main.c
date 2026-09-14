@@ -26,7 +26,7 @@
 #define SAMPLE_Y        256
 #define NUM_THREADS     16
 #define SCORE_CUTOFF    81.0
-#define REQUIRE_ALL_BIOMES 1      // 1 = only keep 52/52 seeds 0 = keep any score over threshold
+#define REQUIRE_ALL_BIOMES 0      // 1 = only keep 52/52 seeds 0 = keep any score over threshold
 #define TE_CUTOFF       0.984     // every 83+ seed so far is above this
 #define CRUNCH_A        0.25f
 #define CRUNCH_AB       0.30f

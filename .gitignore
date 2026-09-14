@@ -5,3 +5,5 @@
 *.exe
 arb4096*.txt
 .vs
+*.so
+/lib/*.o
